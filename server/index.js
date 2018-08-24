@@ -13,6 +13,10 @@ let todos = [
 app.use(cors());
 app.use(json());
 
+app.get("/api/stuff", (req, res) => {
+  res.status(200).json(todos);
+});
+
 app.get("/api/todos", (req, res) => res.status(200).json(todos));
 app.post("/api/todos", (req, res) => {
   todos.push({
